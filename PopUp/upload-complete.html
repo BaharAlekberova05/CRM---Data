@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Upload Complete</title>
+    <script
+      src="https://kit.fontawesome.com/550bd0e722.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: "#031225",
+              warning: "#E93C0D",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter bg-slate-500 flex justify-center">
+    <!-- UPLOAD COMPLETE -->
+    <div
+      class="flex flex-col justify-center items-center w-[300px] bg-white rounded-lg pt-10 px-11 pb-6 shadow-[0px_0px_24px_0px_#00000033]"
+    >
+      <img src="/images/happy-green.svg" alt="upload complete" />
+
+      <p class="mt-4 mb-3 text-[#39A645] font-medium text-2xl">
+        Upload Complete
+      </p>
+
+      <p class="text-[#A1A7AD] font-medium text-[16px] text-center mb-8">
+        Your file was uploaded successfully
+      </p>
+
+      <button
+        class="rounded-md px-[78px] py-3 bg-[#F3F4F6] border border-[#D2D2D5] text-mainColor text-lg"
+      >
+        Close
+      </button>
+    </div>
+  </body>
+</html>

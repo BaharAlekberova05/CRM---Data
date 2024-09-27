@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM delete and edit</title>
+    <script
+      src="https://kit.fontawesome.com/550bd0e722.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: "#031225",
+              warning: "#E93C0D",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter bg-slate-500 flex justify-center">
+    <!-- DELETE AND EDIT -->
+    <div
+      class="flex flex-col w-[166px] rounded-md px-4 py-3 bg-white shadow-[0px_0px_24px_0px_#00000033]"
+    >
+      <div class="flex items-center gap-x-1 mb-6">
+        <div class="flex items-center justify-center size-[20px]">
+          <img
+            src="/images/trash-gray-mini.svg"
+            alt="trash"
+            class="inline-block size-full object-cover"
+          />
+        </div>
+        <button class="text-[20px] text-mainColor">Delete</button>
+      </div>
+
+      <div class="flex items-center gap-x-1">
+        <div class="flex items-center justify-center size-[20px]">
+          <img
+            src="/images/edit-pen.svg"
+            alt="trash"
+            class="inline-block size-full object-cover"
+          />
+        </div>
+        <button class="text-[20px] text-mainColor">Edit</button>
+      </div>
+    </div>
+  </body>
+</html>

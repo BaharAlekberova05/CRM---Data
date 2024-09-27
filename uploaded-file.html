@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Uploaded File</title>
+    <script
+      src="https://kit.fontawesome.com/550bd0e722.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&dispxay=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: "#031225",
+              warning: "#E93C0D",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter">
+    <!-- HEADER -->
+    <header
+      class="w-full h-[88px] px-10 py-[20px] border-b-[1px] border-b-[#F2F2F2] fixed top-0 left-0 bg-white z-10"
+    >
+      <!-- LOGO, MENUS AND USER-->
+      <div class="flex items-center justify-between">
+        <!-- LOGO AND MENUS -->
+        <div class="flex items-center gap-x-6">
+          <!--LOGO  -->
+          <div class="size-12">
+            <a href="#">
+              <img
+                src="/images/logo.svg"
+                alt="logo"
+                class="object-cover w-full h-full"
+              />
+            </a>
+          </div>
+          <!-- MENUS -->
+          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+            >Dashboard</a
+          >
+          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+            >Sales pipeline</a
+          >
+          <a
+            href="#"
+            class="text-mainColor text-xl px-4 py-[10px] bg-[#DEEBFF] rounded-md"
+            >Contacts</a
+          >
+          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+            >Admin panel</a
+          >
+        </div>
+
+        <!-- USER -->
+        <div class="flex items-center gap-x-4">
+          <!-- USER PROFILE -->
+          <div class="flex items-center gap-x-3">
+            <a href="#" class="text-xl text-mainColor">Sophia Peterson</a>
+            <!-- PROFILE PHOTO -->
+            <div class="size-11 rounded-md">
+              <a href="#">
+                <img
+                  src="/images/userPP.svg"
+                  alt="userPP"
+                  class="w-full h-full rounded-md object-cover"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main
+      class="bg-[#F9FAFB] w-full px-10 pt-10 pb-[80px] mt-[88px] overflow-auto"
+    >
+      <!-- CONTACTS | UPLOADED FILE AND BUTTONS -->
+      <div class="flex flex-col items-center gap-x-5 w-full mb-8">
+        <div class="flex items-center justify-between w-full">
+          <!--  CONTACTS | UPLOADED FILE-->
+          <div class="flex items-center gap-x-3">
+            <a href="#"
+              ><i class="fa-solid fa-arrow-left text-xl text-[#7C838B]"></i
+            ></a>
+            <a href="#" class="font-medium text-[#7C838B] text-2xl">Contacts</a>
+            <span class="text-mainColor font-medium text-2xl"
+              >| Uploaded File</span
+            >
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="flex items-center gap-x-3">
+            <button
+              class="rounded-md py-3 px-11 border border-[#D2D2D5] bg-[#F3F4F6] text-lg text-mainColor hover:text-[#1971F6] hover:border-[#1971F6] duration-300"
+            >
+              Discard
+            </button>
+
+            <button
+              class="flex items-center gap-x-3 rounded-md px-10 py-3 bg-[#1971F6] text-white text-lg hover:bg-[#1263DE] duration-300"
+            >
+              <img src="/images/import.svg" alt="import" class="text-[24px]" />
+              Import
+            </button>
+          </div>
+        </div>
+
+        <!-- UPLOADED FILE INFORMATION -->
+        <div class="flex items-center w-full mt-5">
+          <div class="flex items-center gap-x-3 mr-11">
+            <span class="text-lg font-medium text-mainColor"
+              >Uploaded file:</span
+            >
+            <img src="./images/document.svg" alt="document" class="w-6 h-6" />
+            <a href="#" class="text-lg text-[#4E4E4E]">customerlist1.xlsx</a>
+          </div>
+
+          <div class="flex items-center">
+            <a
+              href="#"
+              class="underline font-medium text-lg text-mainColor mr-3"
+              >Need help?</a
+            >
+            <img src="/images/import-black.svg" alt="import" class="size-6" />
+            <a href="#" class="ml-1 text-[#4E4E4E] text-lg"
+              >Import tempxate for customers</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACTS TABLE -->
+      <table class="w-full bg-white">
+        <!-- TABLE HEAD -->
+        <thead class="border-b border-[#F5F5F5]">
+          <tr>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i class="mr-2 text-[#7C83size-6 8B] text-[16px] fa-solid fa-user"></i>
+              Contact
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-envelope"
+              ></i>
+              Email
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-phone-volume"
+              ></i>
+              Phone
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-building"
+              ></i>
+              Company
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-user-group"
+              ></i>
+              Department
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-address-card"
+              ></i>
+              Position
+            </td>
+            <td
+              class="text-[#7C838B] text-[16px] leading-[19px] py-3 px-[20px]"
+            >
+              <i
+                class="size-6 mr-2 text-[#7C838B] text-[16px] fa-solid fa-arrows-rotate"
+              ></i>
+              Status
+            </td>
+          </tr>
+        </thead>
+
+        <!-- TABLE BODY -->
+        <tbody>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">J</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Jessica Smart</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              jessica.smart@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 32
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Ocean Blue Designs
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Marketing
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Senior Marketing Manager
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-check text-[#39A645] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+
+          <!-- TABLE LINES -->
+          <tr class="border-b">
+            <td
+              class="py-3 px-[20px] border-r text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/images/menu-circle.svg"
+                  alt=""
+                  class="cursor-pointer"
+                />
+                <div
+                  class="flex-shrink-0 w-[28px] h-[28px] bg-[#9938C3] rounded-full flex items-center justify-center mx-3"
+                >
+                  <span class="text-sm text-white">L</span>
+                </div>
+                <span
+                  class="text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Lily Adams</span
+                >
+              </div>
+            </td>
+
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              lily.adams@gmail.com
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              +994 70 122 42 41
+            </td>
+            <td class="py-3 px-[20px] border-x text-[16px] text-mainColor">
+              <div
+                class="flex items-center justify-center rounded-full border-[2px]"
+              >
+                <span
+                  class="text-warning text-[16px] whitespace-nowrap overflow-hidden text-ellipsis"
+                  >Not provided</span
+                >
+              </div>
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              Design
+            </td>
+            <td
+              class="py-3 px-[20px] border-x text-[16px] text-mainColor whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              UI/UX Designer
+            </td>
+            <td
+              class="py-3 px-[20px] text-[16px] text-mainColor flex items-center justify-center whitespace-nowrap overflow-hidden text-ellipsis"
+            >
+              <span>
+                <i
+                  class="fa-solid fa-circle-xmark text-[#E93C0D] text-[20px]"
+                ></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

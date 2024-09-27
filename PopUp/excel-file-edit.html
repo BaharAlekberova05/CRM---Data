@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Excel File Edit</title>
+    <script
+      src="https://kit.fontawesome.com/550bd0e722.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: "#031225",
+              warning: "#E93C0D",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter bg-slate-500 flex justify-center">
+    <div class="w-[700px] rounded-lg p-5 bg-white flex flex-col">
+      <!-- Edit Contact Information -->
+      <div class="flex flex-col">
+        <div class="flex items-center justify-between">
+          <span class="font-semibold text-xl text-mainColor"
+            >Edit Contact Information</span
+          >
+          <button>
+            <i class="fa-solid fa-circle-xmark text-[#7C838B] text-[24px]"></i>
+          </button>
+        </div>
+
+        <p class="font-medium text-lg text-[#7C838B] mb-4">
+            Revise the contact details to ensure accuracy.
+        </p>
+      </div>
+
+      <hr class="text-[#D9D9D9] mb-6" />
+
+      <!-- CHANGE CONTACT -->
+      <div class="flex flex-col">
+        <!-- INPUTS -->
+        <div class="flex flex-col space-y-4">
+          <!-- burada space-y-7 -> space-y-4 edildi -->
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <!-- burada space-y-5 -> space-y-3 edildi -->
+              <span class="text-mainColor text-lg">Full name</span>
+              <input
+                type="text"
+                placeholder="e.g. Sarah White"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <!-- burada space-y-5 -> space-y-3 edildi -->
+              <span class="text-mainColor text-lg">Company</span>
+              <input
+                type="text"
+                placeholder="e.g. Sunflower Studios"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Email</span>
+              <input
+                type="text"
+                placeholder="e.g. example@gmail.com"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Department</span>
+              <input
+                type="text"
+                placeholder="Marketing"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Phone</span>
+              <input
+                type="text"
+                placeholder="e.g. (+994)70 211 45 32"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Position</span>
+              <input
+                type="text"
+                placeholder="Marketing Specialist"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex items-center justify-between mt-11">
+          <!-- DISCARD BUTTON -->
+          <button
+            class="border border-[#D2D2D5] rounded-md px-3 py-[10px] bg-[#F3F4F6] text-lg text-mainColor hover:text-[#1971F6] hover:border-[#1971F6] duration-300"
+          >
+            Discard
+          </button>
+          <!-- SAVE CONTACT BUTTON  -->
+          <button
+            class="bg-[#1971F6] px-3 py-[10px] rounded-md text-white text-lg hover:bg-[#1263DE] duration-300"
+          >
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

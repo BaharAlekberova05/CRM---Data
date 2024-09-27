@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Edit Contacts</title>
+    <script
+      src="https://kit.fontawesome.com/550bd0e722.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: "#031225",
+              warning: "#E93C0D",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter bg-slate-500 flex justify-center">
+    <!-- EDIT CONTACT POPUP -->
+    <div class="w-[700px] rounded-lg p-5 bg-white flex flex-col">
+      <!-- ABOUT CONTACT -->
+      <div class="flex flex-col justify-center mb-6">
+        <!-- AVATAR -->
+        <div
+          class="flex-shrink-0 w-[80px] h-[80px] bg-[#92C338] rounded-full flex items-center justify-center mb-4"
+        >
+          <span class="text-4xl text-white">S</span>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="flex justify-between">
+          <div class="flex flex-col justify-center">
+            <span class="font-medium text-2xl text-mainColor">Sarah White</span>
+            <span class="text-lg text-[#7C838B]">sarahwhite@gmail.com</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-medium text-lg text-mainColor">Created by: </span>
+
+            <div class="flex items-center">
+              <!-- AVATARCIK -->
+              <div
+                class="flex-shrink-0 w-[24px] h-[24px] bg-[#77919D] rounded-full flex items-center justify-center mr-2"
+              >
+                <span class="text-sm text-white">A</span>
+              </div>
+              <span class="text-lg text-[#7C838B]">Amanda Johnson </span>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-medium text-lg text-mainColor">Date added:</span>
+            <div class="flex items-center">
+              <i
+                class="fa-regular fa-calendar-days text-[20px] mr-2 text-[#7C838B]"
+              ></i>
+              <span class="text-lg text-[#7C838B]">22 June , 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="text-[#D9D9D9] mb-6" />
+
+      <!-- CHANGE CONTACT -->
+      <div class="flex flex-col">
+        <!-- INPUTS -->
+        <div class="flex flex-col space-y-4">
+          <!-- burada space-y-7 -> space-y-4 edildi -->
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <!-- burada space-y-5 -> space-y-3 edildi -->
+              <span class="text-mainColor text-lg">Full name</span>
+              <input
+                type="text"
+                placeholder="e.g. Sarah White"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <!-- burada space-y-5 -> space-y-3 edildi -->
+              <span class="text-mainColor text-lg">Company</span>
+              <input
+                type="text"
+                placeholder="e.g. Sunflower Studios"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Email</span>
+              <input
+                type="text"
+                placeholder="e.g. example@gmail.com"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Department</span>
+              <input
+                type="text"
+                placeholder="Marketing"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Phone</span>
+              <input
+                type="text"
+                placeholder="e.g. (+994)70 211 45 32"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+
+            <div class="flex flex-col space-y-3">
+              <span class="text-mainColor text-lg">Position</span>
+              <input
+                type="text"
+                placeholder="Marketing Specialist"
+                class="border border-[#D9D9D9] w-[316px] rounded-md p-[10px] placeholder:text-lg placeholder:text-[#D9D9D9]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex items-center justify-between mt-11">
+          <!-- DELETE CONTACT BUTTON -->
+          <button class="bg-[#FBF5F5] rounded-md px-3 py-[10px] text-[#E93C0D] text-lg">Delete contact</button>
+
+          <div class="flex items-center gap-x-3">
+            <!-- DISCARD BUTTON -->
+            <button
+              class="border border-[#D2D2D5] rounded-md px-3 py-[10px] bg-[#F3F4F6] text-lg text-mainColor hover:text-[#1971F6] hover:border-[#1971F6] duration-300"
+            >
+              Discard
+            </button>
+            <!-- SAVE CONTACT BUTTON  -->
+            <button
+              class="bg-[#1971F6] px-3 py-[10px] rounded-md text-white text-lg hover:bg-[#1263DE] duration-300"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
