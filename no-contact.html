@@ -21,7 +21,7 @@
           extend: {
             colors: {
               mainColor: "#031225",
-              warning: '#E93C0D'
+              warning: "#E93C0D",
             },
             fontFamily: {
               inter: ["Inter", "sans-serif"],
@@ -31,68 +31,64 @@
       };
     </script>
   </head>
-  <body class="font-inter overflow-hidden">
-    <!-- HEADER -->
-    <header
-      class="w-full h-[88px] px-10 py-[20px] border-b-[1px] border-b-[#F2F2F2] fixed top-0 left-0 bg-white z-10"
-    >
-      <!-- LOGO, MENUS AND USER-->
-      <div class="flex items-center justify-between">
-        <!-- LOGO AND MENUS -->
-        <div class="flex items-center gap-x-6">
-          <!--LOGO  -->
-          <div class="size-12">
-            <a href="#">
-              <img
-                src="/images/logo.svg"
-                alt="logo"
-                class="object-cover w-full h-full"
-              />
-            </a>
-          </div>
-          <!-- MENUS -->
-          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
-            >Dashboard</a
-          >
-          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
-            >Sales pipeline</a
-          >
-          <a
-            href="#"
-            class="text-mainColor text-xl px-4 py-[10px] bg-[#DEEBFF] rounded-md"
-            >Contacts</a
-          >
-          <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
-            >Admin panel</a
-          >
-        </div>
-
-        <!-- USER -->
-        <div class="flex items-center gap-x-4">
-
-          <!-- USER PROFILE -->
-          <div class="flex items-center gap-x-3">
-            <a href="#" class="text-xl text-mainColor">Sophia Peterson</a>
-            <!-- PROFILE PHOTO -->
-            <div class="size-11 rounded-md">
+  <body class="font-inter">
+    <div id="container" class="flex flex-col">
+      <!-- HEADER -->
+      <header
+        class="flex flex-col w-full h-[88px] px-10 py-[20px] border-b-[1px] border-b-[#F2F2F2] fixed top-0 left-0 bg-white z-10"
+      >
+        <!-- LOGO, MENUS AND USER-->
+        <div class="flex items-center justify-between">
+          <!-- LOGO AND MENUS -->
+          <div class="flex items-center gap-x-6">
+            <!--LOGO  -->
+            <div class="size-12">
               <a href="#">
                 <img
-                  src="/images/bb.jpg"
-                  alt="userPP"
-                  class="w-full h-full rounded-md object-cover"
+                  src="/images/logo.svg"
+                  alt="logo"
+                  class="object-cover w-full h-full"
                 />
               </a>
             </div>
+            <!-- MENUS -->
+            <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+              >Dashboard</a
+            >
+            <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+              >Sales pipeline</a
+            >
+            <a
+              href="#"
+              class="text-mainColor text-xl px-4 py-[10px] bg-[#DEEBFF] rounded-md"
+              >Contacts</a
+            >
+            <a href="#" class="text-mainColor text-xl px-4 py-[10px]"
+              >Admin panel</a
+            >
+          </div>
+
+          <!-- USER -->
+          <div class="flex items-center gap-x-4">
+            <!-- USER PROFILE -->
+            <div class="flex items-center gap-x-3">
+              <a href="#" class="text-xl text-mainColor">Sophia Peterson</a>
+              <!-- PROFILE PHOTO -->
+              <div class="size-11 rounded-md">
+                <a href="#">
+                  <img
+                    src="/images/userPP.svg"
+                    alt="userPP"
+                    class="w-full h-full rounded-md object-cover"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
 
-    <main class="bg-[#F9FAFB] w-full h-screen px-10 py-10 mt-[88px]">
-      <!-- SEARCH -->
-      <div class="flex flex-col gap-[22px] mb-[26px]">
-        <!-- CONTACTS AND SEARCH -->
-        <div class="flex items-center justify-between">
+        <!-- CONTACTS COUNT & SEARCH & BTNS -->
+        <div class="flex items-center justify-between mt-10">
           <!-- CONTACTS -->
           <div class="flex items-center gap-x-2">
             <span class="font-medium text-3xl text-mainColor">Contacts</span>
@@ -145,27 +141,33 @@
             </button>
           </div>
         </div>
+      </header>
 
-        <!-- NO CONTACT INFO -->
-        <div class="flex items-center justify-center">
-          <div class="flex flex-col items-center justify-center">
-            <div>
-              <img
-                src="/images/happy-white.svg"
-                alt="no-contact"
-                class="w-full h-full object-cover"
-              />
+      <!-- NO-CONTACT MAIN -->
+      <main class="flex items-center justify-center bg-[#F9FAFB] w-full h-screen px-10 py-10">
+        <!-- SEARCH -->
+        <div class="flex flex-col gap-[22px] mb-[26px]">
+          <!-- NO CONTACT INFO -->
+          <div class="flex items-center justify-center">
+            <div class="flex flex-col items-center justify-center">
+              <div>
+                <img
+                  src="/images/happy-white.svg"
+                  alt="no-contact"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <p class="font-medium text-3xl text-center text-mainColor mb-4">
+                You currently have no contacts.
+              </p>
+              <p class="text-2xl text-mainColor text-center">
+                Once you add some, they'll appear here for easy access and
+                management.
+              </p>
             </div>
-            <p class="font-medium text-3xl text-center text-mainColor mb-4">
-              You currently have no contacts.
-            </p>
-            <p class="text-2xl text-mainColor text-center">
-              Once you add some, they'll appear here for easy access and
-              management.
-            </p>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
